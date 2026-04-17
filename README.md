@@ -19,15 +19,14 @@ SmritiBrief is an autonomous AI agent designed to act as your personal "meeting 
 ### 2. Autonomous Memory Management
 - **Persistent Retention**: Every meeting note, email summary, and informal chat is stored using Hindsight's vector memory.
 - **Hinglish Support**: Understands professional nuances like "Budget tight hai" or "Thoda adjust karlo."
-- **Commitment Tracker**: Extracts "Vaadas" (promises) from memory.
+- **Commitment Tracker**: Extracts "Vaadas" (promises) directly from memory.
 
-## 🛠️ Roadmap (Upcoming)
-- **Google Calendar Integration**: Auto-briefings 10 minutes before your calls.
-- **Google Drive Integration**: Pulls technical context from shared proposals and SRS documents.
-- **WhatsApp Interface**: Forward client messages directly to your agent's memory.
+### 3. Production-Ready Backend
+- **JWT Authentication**: Secure user registration and login system.
+- **Persistent Profiles**: Agent personality and user details stored in PostgreSQL (Neon DB).
+- **Self-Healing Connection**: Background table creation and async database pooling for high performance.
 
 ## 🛠️ Technical Stack
-
 - **Backend**: FastAPI (Python 3.11+)
 - **Memory Layer**: [Hindsight](https://vectorize.io) (Vector Memory SDK)
 - **Database**: PostgreSQL (Hosted on Neon DB)
@@ -36,18 +35,17 @@ SmritiBrief is an autonomous AI agent designed to act as your personal "meeting 
 - **Brain**: LLM (Gemini 1.5 Pro)
 
 ## 🏗️ Folder Structure
-
 ```text
 SmritiBrief/
 ├── backend/
 │   ├── app/
-│   │   ├── core/         # Security, Config, Database setup
-│   │   ├── models/       # SQLAlchemy User/Profile models
+│   │   ├── core/         # Security, Config, Database, Dependencies
+│   │   ├── models/       # SQLAlchemy User models
 │   │   ├── routes/       # Auth, Memory, Profile endpoints
 │   │   ├── schemas/      # Pydantic validation models
 │   │   ├── services/     # Hindsight Manager wrapper
-│   │   └── main.py       # FastAPI entry point
-│   ├── run.py            # Uvicorn server runner
+│   │   └── main.py       # FastAPI entry point & Health checks
+│   ├── run.py            # Uvicorn server runner with Windows fix
 │   └── requirements.txt  # Dependencies
 └── README.md
 ```
@@ -72,8 +70,9 @@ SmritiBrief/
    ```env
    HINDSIGHT_SMRITIBRIEF_API_KEY=your_hindsight_key
    SECRET_KEY=your_jwt_secret
-   DATABASE_URL=postgresql+asyncpg://user:pass@host/dbname?ssl=true
+   DATABASE_URL=postgresql://user:pass@host/dbname?sslmode=require
    ```
+   *Note: The backend automatically handles `asyncpg` scheme conversion and query parameter stripping.*
 
 3. **Install Dependencies**:
    ```bash
@@ -95,8 +94,9 @@ SmritiBrief/
    python run.py
    ```
 
-5. **API Docs**:
-   Visit `http://localhost:8000/docs` to explore the Swagger UI.
+5. **Verify Status**:
+   - **API Docs**: Visit `http://localhost:8000/docs`
+   - **Health Check**: Visit `http://localhost:8000/health` to verify database connectivity.
 
 ## 🏆 Hackathon Focus
 SmritiBrief is built to demonstrate the power of **persistent, long-term memory** in AI agents. By using Hindsight, we've moved beyond simple "chat history" into "relationship intelligence" that grows smarter with every meeting.
