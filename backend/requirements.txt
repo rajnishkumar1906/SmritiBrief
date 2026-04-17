@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-dotenv
+hindsight-client
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2
+pydantic
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
+email-validator
+sqlalchemy
+psycopg2-binary
+asyncpg
