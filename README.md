@@ -9,7 +9,7 @@ SmritiBrief is an autonomous AI agent designed to act as your personal "meeting 
 - **Missed Leverage**: Forgetting a client's past commitment or a specific technical concern.
 - **Relationship Friction**: Repeating questions or sounding unprepared in long Indian B2B sales cycles.
 
-## ✨ Key Features
+## ✨ Key Features (Current)
 
 ### 1. The "Closer" Agent (Deal Intelligence)
 - **Leverage Detection**: Automatically cross-references today's discussion with months of past data to catch contradictions.
@@ -19,12 +19,12 @@ SmritiBrief is an autonomous AI agent designed to act as your personal "meeting 
 ### 2. Autonomous Memory Management
 - **Persistent Retention**: Every meeting note, email summary, and informal chat is stored using Hindsight's vector memory.
 - **Hinglish Support**: Understands professional nuances like "Budget tight hai" or "Thoda adjust karlo."
-- **Commitment Tracker**: Extracts "Vaadas" (promises) and reminds you before deadlines.
+- **Commitment Tracker**: Extracts "Vaadas" (promises) from memory.
 
-### 3. Integrated Ecosystem
-- **Google Calendar**: Auto-briefings 10 minutes before your calls.
-- **Google Drive**: Pulls technical context from shared proposals and SRS documents.
-- **WhatsApp Interface**: (In development) Forward client messages directly to your agent's memory.
+## 🛠️ Roadmap (Upcoming)
+- **Google Calendar Integration**: Auto-briefings 10 minutes before your calls.
+- **Google Drive Integration**: Pulls technical context from shared proposals and SRS documents.
+- **WhatsApp Interface**: Forward client messages directly to your agent's memory.
 
 ## 🛠️ Technical Stack
 

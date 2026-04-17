@@ -6,7 +6,7 @@ load_dotenv()
 class Settings:
     PROJECT_NAME: str = "The Closer - AI Deal Intelligence Agent"
     HINDSIGHT_API_KEY: str = os.getenv("HINDSIGHT_SMRITIBRIEF_API_KEY")
-    _database_url: str = os.getenv("DATABASE_URL", "")
+    _database_url: str = os.getenv("DATABASE_URL", "").strip()
     
     @property
     def DATABASE_URL(self) -> str:
